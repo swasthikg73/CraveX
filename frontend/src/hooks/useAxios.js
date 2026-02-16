@@ -1,7 +1,4 @@
 import axiosPrivate from "../api/axios.js";
-import { StoreContext } from "../context/StoreContext";
-
-import { useContext } from "react";
 import { useEffect } from "react";
 
 const useAxiosPrivate = () => {

@@ -1,4 +1,3 @@
-import React from "react";
 import "./Header.css";
 
 const Header = () => {
@@ -7,11 +6,14 @@ const Header = () => {
       <div className="header-contents">
         <h2>Order your favourite food here</h2>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio omnis
-          ratione et quibusdam, totam aperiam porro sit est ipsum consectetur
-          qui nemo quis tempore, odit eveniet adipisci, quas natus nisi.
+          Welcome to Cravex — where every craving finds its match. Explore a
+          world of mouthwatering meals, irresistible snacks, and comfort food
+          classics, all just a tap away. Fast delivery, fresh ingredients, and
+          flavors that keep you coming back for more.
         </p>
-        <button>View Menu </button>
+        <button>
+          <a href="#explore-menu">View Menu </a>
+        </button>
       </div>
     </div>
   );
