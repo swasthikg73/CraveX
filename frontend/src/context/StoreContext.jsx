@@ -1,6 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
-//import { food_list } from "../assets/assets";
-import axios from "axios";
+import React, { createContext, useState } from "react";
 import useAxiosPrivate from "../hooks/useAxios.js";
 export const StoreContext = createContext(null);
 
@@ -8,7 +6,7 @@ const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const url = "https://cravex-a-food-app-backend.onrender.com";
 
- // const url = "http://localhost:3200";
+  //const url = "http://localhost:3200";
 
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
@@ -62,17 +60,13 @@ const StoreContextProvider = (props) => {
   //remove from cart
   const removefromCart = async (itemId) => {
     if (token)
-      await axios
-        .put(
-          url + "/api/cart/remove",
-          { itemId },
-          { headers: { authorization: token } }
-        )
+      await axiosPrivate
+        .put(url + "/api/cart/remove", { itemId })
         .then(async (res) => {
           await fetchCartItems(token);
         });
 
-    // setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    //setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
 
   const getTotalAmt = () => {
